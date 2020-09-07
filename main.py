@@ -268,6 +268,6 @@ def like(srno):
 
 
 # end of function section
-app.run(debug=True)
+app.run(debug=False)
 
 #  , host='0.0.0.0'
