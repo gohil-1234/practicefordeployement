@@ -1,0 +1,49 @@
+{%extends "layout.html"%}
+{%block body%}
+
+
+  <main id="main">
+
+
+    <!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <img src="/static/images/{{post.srno}}.jpg" class="img-fluid" alt="">
+            
+            <h3>{{post.title}}</h3>
+            <p>
+              {{post.content}}
+              
+              
+              
+            </p>
+          </div>
+          <div class="col-md-12">
+            <div class="button-group">
+              <button id="likeBtn" class="btn btn-block btn-info col-md-4" style="background-color: #5f86cf;"><div id="likeCount" style="display: inline;">{{post.like}}</div><i id="likeFont" class="fa fa-heart"></i>&nbsp;</button>
+              <div id="feedback" class="btn-block" style="color:#5f86cf ;"></div>
+              <button id="commentBtn" class="btn btn-block btn-info col-md-4" style="background-color: #5f86cf;"><i id="commentFont" class="fa fa-comment"></i></button>
+            </div>
+            <div class="container"  style="display: none;" id="commentBox">
+              <form>
+                <div class="col-md-4 form-group float-left mt-3">
+                  <textarea name="" id="" placeholder="Comment" class="form-control" cols="30" rows="4"></textarea>
+                  <div class="mx-auto mt-2">
+                    <input type="button" value="Submit" id="submitCmnt" class="btn btn-block btn-info" style="background-color: #5f86cf; width: 50%;">
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div>
+
+      </div>
+    </section><!-- End Cource Details Section -->
+
+   
+    
+  </main><!-- End #main -->
+
+  {%endblock%}

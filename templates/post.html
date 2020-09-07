@@ -1,0 +1,62 @@
+{%extends "layout.html"%}
+{%block body%}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo mr-auto"><a href="index.html">Technical Blogs</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+       
+      </ul>
+    </nav><!-- .nav-menu -->
+
+
+
+  </div>
+</header><!-- End Header -->
+
+  <main id="main">
+
+
+    <!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <img src="/static/images/{{post.srno}}.jpg" class="img-fluid" alt="">
+            
+            <h3>{{post.title}}</h3>
+            <p>
+              {{post.content}}
+            </p>
+            <label for="">{{post.like}}</label>
+          </div>
+          <div class="col-md-12">
+            <div class="button-group">
+             <form action="/likebutton/{{post.srno}}"  method="post" ><button id="likeBtn"  onclick="myfunc4()" class="btn btn-block btn-info col-md-4" style="background-color: #5f86cf;">Like</button></form> 
+              
+             
+              
+            </div>
+        </div>
+        </div>
+
+      </div>
+      
+    </section><!-- End Cource Details Section -->
+
+   
+    
+  </main><!-- End #main -->
+
+  {%endblock%}
