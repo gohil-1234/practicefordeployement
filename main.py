@@ -72,7 +72,6 @@ class contact(db.Model):
 @app.route('/')
 def home():
     posts = blogpost.query.filter_by().all()
-    # popularposts = popular.query.filter_by().all()
     
     last = math.ceil(len(posts)/3)
     page = request.args.get('page')
@@ -82,11 +81,11 @@ def home():
     posts = posts[(page-1)*3:(page-1)*3+3]
     if page == 1:
         prev1 = "#"
-        next1 = "/?page="+str(page+1)
+
 
     elif page == last:
         next1 = "#"
-        prev1 = "/?page="+str(page-1)
+
     else:
         next1 = "/?page="+str(page+1)
         prev1 = "/?page="+str(page-1)
@@ -166,8 +165,9 @@ def dashboard():
             return render_template('login.html')
 
     else:
-        return render_template('login.html')
-    return render_template('login.html')
+        return render_template('about.html')
+
+
 
 
 @app.route('/logout', methods=['POST'])
@@ -179,8 +179,8 @@ def logout():
 
 @app.route('/upload', methods=['GET', 'POST'])
 def new_post_viewer():
-    # last=blogpost.query.filter_by().all()
-    # last_post=last[-1]
+
+
     return render_template('newpost.html')
 
 
@@ -231,8 +231,7 @@ def edit(srno1):
             os.rename(
                 f'E:\website\static\images\\{new_file.filename}', f'E:\website\static\images\\{srno}.jpg')
         elif new_file.filename == "":
-
-            pass
+            return "space"
 
         db.session.commit()
         return redirect(url_for('dashboard'))
